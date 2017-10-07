@@ -1,0 +1,265 @@
+%% -*- coding: utf-8; -*-
+
+\documentclass[
+  phd,
+  %% master
+  %% brazilian
+  american
+]{ThesisPUC}
+
+
+%%%
+%%% Additional Packages
+%%%
+
+  %% \usepackage[brazilian]{babel}      %% in ThesisPUC.cls
+  %% \usepackage[utf8]{inputenc}        %% .
+  %% \usepackage[T1]{fontenc}           %% .
+  %% \usepackage{lmodern}               %% .
+  %% \usepackage[pdftex]{graphicx}	%% .
+
+  \usepackage{tabularx}
+  \usepackage{multirow}
+  \usepackage{multicol}
+  \usepackage{colortbl}
+  \usepackage[%
+    dvipsnames,
+    svgnames,
+    x11names,
+    fixpdftex
+  ]{xcolor}
+  \usepackage{numprint}
+  \usepackage{textcomp}
+  \usepackage{booktabs}
+  \usepackage{amsmath}
+  \usepackage{enumitem}
+  \usepackage{amssymb}
+  \usepackage{textcomp}
+% \usepackage{etoolbox}
+ %% numprint 
+\npthousandsep{.}
+\npdecimalsign{,}
+
+
+
+%% ThesisPUC option
+%% \tablesmode{figtab} %% [nada, fig, tab ou figtab]
+
+
+%%%
+%%% Counters
+%%%
+
+%% uncomment and change for other depth values
+%% \setcounter{tocdepth}{3}
+%% \setcounter{lofdepth}{3}
+%% \setcounter{lotdepth}{3}
+%% \setcounter{secnumdepth}{3}
+
+
+%%%
+%%% New commands and other global definitions
+%%%
+
+\input{defs}
+
+
+%%%
+%%% Misc.
+%%%
+
+\usecolour{true}
+
+
+%%%
+%%% Titulos
+%%%
+
+\author{Edwin Germán Maldonado Távara}
+\authorR{Maldonado Távara, Edwin Germán}
+
+\advisor{Marley Maria B. R. Vellasco}{Prof.}
+\advisorR{Vellasco, Marley}
+
+\coadvisor{Bruno A. C. Horta}{Dr.}
+\coadvisorR{Horta, Bruno}
+\coadvisorInst{Universidade Federal de Rio de Janeiro}{LABBMOL/UFRJ}
+
+\coadvisorII{Fábio Lima Custódio}{Dr.}
+\coadvisorIIR{Custodio, Fabio}
+\coadvisorIIInst{Laboratorio Nacional de Computacão Científica}{LNCC}
+
+%% \title{Desenvolvimento de um sistema de microscopia digital para
+%%  classificação automática de tipos de hematita em minério de ferro}
+
+\title{Investigação da impôrtancia relativa de features usados na
+predição da estrutura de proteinas: 
+Uma abordagem usando Aprendizado de Máquina}
+
+\titleuk{Investigation of the relative importance of
+features used in protein structure
+prediction: a machine learning approach.}
+
+%% \subtitulo{Aqui vai o subtitulo caso precise}
+
+\day{30}
+\month{August}
+\year{2017}
+
+\city{Rio de Janeiro}
+\CDD{620.11}
+\department{Engenharia Elétrica}
+\program{Engenharia Elétrica}
+\school{Centro Técnico Científico}
+\university{Pontifícia Universidade Católica do Rio de Janeiro}
+\uni{PUC-Rio}
+
+
+%%%
+%%% Jury
+%%%
+
+\jury{%
+  \jurymember{André Vargas Abs.}{Prof.}
+    {Universidade do Estado do Rio de Janeiro}{UERJ}
+  \jurymember{Karla Figeirredo}{Profa.}
+    {Universidade do Estado do Rio de Janeiro}{UERJ}
+  \jurymember{Laurent Emmanuel Dardenne}{Prof.}
+    {Laboratório Nacional de Computação Científica}{LNCC}
+  \jurymember{Marcos Henrique de Pinho Maurício}{Dr.}
+    {Departamento de Engenharia de Materiais}{PUC-Rio}
+  \schoolhead{José Eugenio Leal}{Prof.}
+}
+
+
+%%%
+%%% Resume
+%%%
+
+\resume{%
+ Graduated in Systems Engineering at UNT (National Uni-
+ versity of Trujillo - La Libertad, Perú) in 2002. Did his mas-
+ ter degree at PUC-Rio, specializing in the application of op-
+ timization and machine learning methods in Bioinformatics.
+ Dedicated to full-time research at PUC-Rio, Brazil.}
+
+
+%%%
+%%% Acknowledgment
+%%%
+
+\acknowledgment{%
+  \noindent I would like to first thank my advisor ...
+  \bigskip
+
+  \noindent Then I wish to thank ...
+}
+
+
+%%%
+%%% Catalog prekeywords
+%%%
+
+\catalogprekeywords{%
+  \catalogprekey{Engenharia El\'etrica}%
+  \catalogprekey{Inteligência Computacional Aplicada}%
+}
+
+
+%%%
+%%% Keywords
+%%%
+
+\keywords{%
+  \key{Predição de Estrutura de Prote\'{i}nas;}
+  \key{Avaliação da Qaulidade de Proteínas;}
+  \key{Seleção de descriptores;}
+  \key{Importância relativa de descriptores;}
+  \key{Aprendizado de Máquina;}
+  \key{Redes Neurais;}
+  \key{Algoritmos Genéticos.}
+}
+
+\keywordsuk{%
+
+   \key{Protein Structure Prediction;}
+   \key{Protein Quality Assessment;}
+   \key{Feature Selection;}
+   \key{Features Relative Importance;}
+   \key{Machine Learning;}
+   \key{Neural Networks;}
+   \key{Genetic Algorithm.}
+ 
+}
+
+
+%%%
+%%% Abstract
+%%%
+
+\abstract{%
+ As proteinas são importantes pois estas determinam as funções das células vivas.
+ Estas funções estão diretamente relacionadas com sua estrutura terciaria. Para determinar
+ a estrura terciaria de proteinas tem sido desenvolvidos muitos metódos experimentais.
+ Sin embargo, estes metódos são costosos e demorados. Por isso, métodos computacionais 
+ foram desenvolvidos para a predição da estrutura terciária da proteína.
+ Esses métodos geram um conjunto de vários modelos candidatos conhecidos como decoys. 
+ Neste conjunto, identificar o modelo ou o subconjunto de modelos mais próximos da estrutura nativa da proteína, 
+ é uma tarefa desafiadora. Para realizar esta tarefa, foram propostos dois tipos de métodos.
+ O primeiro grupo de métodos utilizam a estrutura nativa para avaliar a qualidade 
+ dos decoys (RMSD, GDT-TS, TM-Score, MaxSub). 
+ Na ausência da estrutura nativa, foram propostas  métodos baseados em funções de pontuação 
+  (funções de potencial, funções de potencial estatístico, funções baseadas em consenso,
+ algoritmos de aprendizado de máquina).
+ Os métodos de aprendizado de máquina, avaliam a qualidade dos modelos decoys  usando um subconjunto de descriptores. 
+ A vantagem desses métodos é a caracteristica de identificar relações ocultas entre os descriptores selecionados, 
+ esta tarefa é difícil de alcançar com os outros tipos de métodos. Por outro lado, 
+ estes métodos tem a desvantagem de realizar uma seleção não automatica de descriptores, 
+ isto pode ser um fator limitante na avaliação da qualidade dos decoys.
+ Dadas estas desvantagens, este trabalho propõe um modelo para a seleção automática de descriptores, 
+ esta seleção é realizada usando diferentes tipos de descriptores. Além disso, este trabalho introduz um novo 
+ método  para o cálculo da importancia relativa dos features chamados SWToFIC.
+ Finalmente, o modelo fornece a predição do GDT-TS score para a avaliação da qualidade dos decoys de proteína.}
+
+\abstractuk{%
+ Proteins are important because they determine different functions in living cells. These functions, are directly related to its three-dimensional structure. To determine the protein three-dimensional structure have been developed several experimental methods. However, these methods are costly and time-consuming. Therefore, computational methods have been developed for protein tertiary structure prediction. These methods generate a set of several candidate’s models known as decoys. In this set, identify the model or subset of models that are more close to the protein native structure is a challenging task. To perform this task two types of methods have been proposed. The first types of methods use the native structure to evaluate the decoys quality (RMSD,GDT-TS,TM-Score,MaxSub). In absence of the native structure, methods based scoring functions have been proposed (physics-based potential functions, statistical potential functions, consensus-based functions, machine learning algorithms). Machine learning methods, evaluate the models quality using a subset of features. The advantage of these methods is their power to identify hidden relationships between the selected features, this task is difficult to achieve with the other methods. On the other hand, the main disadvantage is that these methods perform a non-automatic feature selection, this could be a factor that limits the quality assessment of the decoys models. Given these drawbacks, this work proposes a model for the automated feature selection, this selection is performed through different types of features. Additionally, this work introduces a new wrapper method to calculates the relative feature importance called (SWtoFIC). Finally, the model provides the GDT-TS score prediction for assessing the quality of the protein decoys.}
+
+
+%%%
+%%% Dedication
+%%%
+
+\dedication{%
+  To my parents, for their support\\
+and encouragement.
+}
+
+%%%
+%%% Epigraph
+%%%
+
+\epigraph{%
+  Like all other arts, the Science of Deduction and Analysis
+  is one which can only be acquired by long and patient study,
+  nor is life enough to allow any mortal to attain the highest possible perfection in it. Before turning to those moral and mental aspects of the matter which present the greatest difficulties, let the inquirer begin by mastering more elementary problems. 
+}
+\epigraphauthor{Sir Arthur Conan Doyle}
+\epigraphbook{Sherlock Holmes, A Study in Scarlet}
+
+
+%%%
+%%% 
+%%%
+
+\begin{document}
+  \input{abrevs}
+  \input{chapter-1}
+  \input{chapter-2}
+  \input{conclusions}
+  %% ...
+  \arial
+  \bibliography{edwin}
+  \normalfont
+  \input{appendix}
+\end{document}
+\grid
